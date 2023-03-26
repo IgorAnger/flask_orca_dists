@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Atom distance calculator for Orca outputs</title>
+</head>
+<body style = "background: url(../static/v2.jpg); font-family: verdana; color: white;">
+	<h1 style="text-align: center;">Interatomic distances calculator for Orca outputs</h1>
+	<form action="/upl" method="post" enctype="multipart/form-data">
+		<label for="filename">Upload your orca .out file(max 60 MB):</label>
+  		<input type="file" name="file"><br>
+  		<label for="n_of_atom_1"> Enter number of atoms in the first molecule: </label>
+  		<input type="number" name="n_of_atom_1"><br>
+  		<input type="submit" value="upload">
+	</form>
+</body>
+</html>
