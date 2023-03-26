@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculus results</title>
+    </head>
+    <body style="background: url(../static/v2.jpg); font-family: verdana; color: rgb(255, 255, 255);">
+        <p>Distances in the initial geometry:</p>
+        <ul>
+            {% for el in dist_list_init %}
+                <li> {{el}} </li>
+            {% endfor %}
+        </ul>
+        <p>H distances in the chosen cycle geometry:</p>
+        <ul>
+	        {% for elem in dist_list %}
+		        <li>{{elem}}</li>
+	        {% endfor %}
+        </ul>
+        <br>
+        <br>
+        <a href="../results.txt" download="results.txt" style="background: white;">Download in txt!</a>
+        <br>
+        <a href="{{ url_for('uploaded') }}" style="background: white;">Back</a>        
+        <br>
+        <a href="{{ url_for('home') }}" style="background: white;">Back to start page</a>
+    </body>
+</html>

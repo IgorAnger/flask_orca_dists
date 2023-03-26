@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>  
+<head>
+<title>File uploaded</title>  
+</head>  
+<body style="background: url(../static/v2.jpg); font-family: verdana; color: rgb(255, 255, 255);">    
+    {% if error %}
+        <p><strong>Input Error!</strong></p>
+    {% endif %}
+    <p>File uploaded successfully</p>
+	<p>Filename: {{fname}}</p>
+    <p>Number of atoms in the first molecule: {{n_of_atom_1}}</p>
+	<p>Number of atoms: {{n_of_atoms}}</p>
+	<p>Number of optimization cycles: {{opt_lines}}</p>
+    <p>Atoms in the first mol:</p>
+    <ul>
+        {% for el in label1 %}
+        <li>{{el}}</li>
+        {%endfor%}
+    </ul>
+    <p>Atoms in the second mol:</p>
+    <ul>
+        {% for el in label2 %}
+        <li>{{el}}</li>
+        {%endfor%}
+    </ul>
+    <form action="/res" method="post">
+        <label for="cycle_n">Enter number of the cycle</label>
+        <input type="number" name="cycle_n">
+        <label for="atom_label_1">Choose atoms from the first mol:</label>
+        <input type="text" name="atom_label_1">
+        <label for="atom_label_2">Choose atoms from the second mol:</label>
+        <input type="text" name="atom_label_2">
+        <label for="res_dist">Enter maximal printed distance(i.e. 3.2):</label>
+        <input type="number" step= "any" name="res_dist">
+        <input type="submit" value="Get Result">
+    </form>
+</body>
+<br>
+<a href="{{ url_for('home') }}" style="background: rgb(247, 247, 247);">Back</a>
+</html>  
